@@ -4,6 +4,5 @@
        xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
        http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
-    <dubbo:reference id="userService"   interface="com.opensource.msgui.busi.user.service.api.UserService"  check="false" version="1.0.0" />
-    <dubbo:reference id="redisService"   interface="com.opensource.msgui.manager.redis.api.RedisService"  check="false" version="1.0.0" />
+    <dubbo:service interface="com.opensource.msgui.manager.redis.api.RedisService" class="com.opensource.msgui.manager.redis.api.impl.RedisServiceImpl" version="1.0.0" />
 </beans>

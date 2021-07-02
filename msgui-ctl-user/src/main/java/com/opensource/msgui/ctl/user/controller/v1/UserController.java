@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
  * 用户管理控制器
  */
 @RestController
-@RequestMapping("/api/ums/buyer/v1")
+@RequestMapping("/api/user/v1")
 public class UserController extends BaseController<UserService, User> {
 
 }
