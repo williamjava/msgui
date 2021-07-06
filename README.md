@@ -16,3 +16,16 @@
 * 启动CtlUserApplication
 * 启动AuthServerApplication
 * 启动GatewayApplication
+
+4.分布式链路追踪系统SkyWalking(零侵入)
+* windows版本es：链接: https://pan.baidu.com/s/1j1-pds9nGoUuhy584DjUZg 提取码: meit
+* windows版本skywalking：链接: https://pan.baidu.com/s/1UC99LsuqTCpCvOVKkkC7fg 提取码: smaa
+* 启动es，运行bin目录下的elasticsearch.bat文件
+* 启动skywalking，运行bin目录下的startup.bat文件
+* 项目启动参数中增加如下参数：
+```
+-javaagent:C:\Users\admin\Desktop\apache-skywalking-apm-bin-es7\agent\skywalking-agent.jar
+-Dskywalking.agent.service_name=msgui-gateway(服务名)
+-Dskywalking.collector.backend_service=localhost:11800
+```
+* 访问：http://localhost:8090/ (端口可在skywalkiing文件目录下的webapp目录下，修改webapp.yml文件)
