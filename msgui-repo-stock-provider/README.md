@@ -1,0 +1,1 @@
+# msgui-repo-stock-provider

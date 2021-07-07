@@ -59,10 +59,17 @@
             <scope>compile</scope>
         </dependency>
 
+        <!--集成Redis分布式锁Redisson-->
         <dependency>
             <groupId>org.redisson</groupId>
             <artifactId>redisson</artifactId>
             <version>3.16.0</version>
+        </dependency>
+
+        <!--集成MQ-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
         </dependency>
 
 <!--        <dependency>-->

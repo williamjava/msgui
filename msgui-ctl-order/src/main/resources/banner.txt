@@ -1,0 +1,2 @@
+ :: MSGUI    ::                       个人微服务实践之MSGUI
+ :: Spring Boot ::                      ${spring-boot.formatted-version}

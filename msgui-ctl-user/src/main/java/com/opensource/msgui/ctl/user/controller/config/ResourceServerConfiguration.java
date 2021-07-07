@@ -19,7 +19,7 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
                 .and()
                 .authorizeRequests()
                 .antMatchers("/v2/**", "/swagger-resources/**",
-                      "/swagger-ui.html", "/webjars/**").permitAll()
+                      "/swagger-ui.html", "/webjars/**", "/api/redis/v1/**", "/api/mq/v1/**").permitAll()
                 .anyRequest().authenticated();
     }
 

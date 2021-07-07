@@ -1,20 +1,18 @@
 package com.opensource.msgui.ctl.user.controller.v1.notify;
 
 import com.opensource.msgui.commons.utils.MapperUtils;
-import com.opensource.msgui.manager.pay.alipay.AlipayService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 
 /**
  * @author whj
- *
+ * <p>
  * 支付宝支付回调方法模板
  */
 @Slf4j
@@ -22,8 +20,8 @@ import java.util.Map;
 @RequestMapping("/notify")
 @EnableAsync
 public class AlipayNotifyController {
-    @Resource
-    private AlipayService alipayService;
+//    @Resource
+//    private AlipayService alipayService;
 
     @PostMapping("/alipay")
     public String aliPayNotify(HttpServletRequest request) {
@@ -31,8 +29,9 @@ public class AlipayNotifyController {
         try {
             Map requestParams = request.getParameterMap();
             log.info("notify=>" + MapperUtils.mapToJson(requestParams));
-            boolean verify_result = alipayService.paramsSign(requestParams);
-            log.info(String.valueOf(verify_result));
+            boolean verify_result = true;
+//            boolean verify_result = alipayService.paramsSign(requestParams);
+//            log.info(String.valueOf(verify_result));
             //获取支付宝的通知返回参数，可参考技术文档中页面跳转同步通知参数列表(以下仅供参考)//
             //商户订单号
 
