@@ -3,14 +3,14 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>msgui-controller</artifactId>
-        <groupId>com.opensource.msgui</groupId>
+        <groupId>com.opensource.msgui.manager</groupId>
+        <artifactId>msgui-manager</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>msgui-ctl-user</artifactId>
-
+    <artifactId>msgui-manager-pay-provider</artifactId>
+    
     <licenses>
         <license>
             <name>Apache 2.0</name>
@@ -18,17 +18,11 @@
         </license>
     </licenses>
 
+
     <dependencies>
         <dependency>
-            <groupId>com.opensource.msgui</groupId>
-            <artifactId>msgui-ctl-base</artifactId>
-            <version>${project.version}</version>
-            <scope>compile</scope>
-        </dependency>
-		
-        <dependency>
-            <groupId>com.opensource.msgui.busi</groupId>
-            <artifactId>msgui-business-user-service-api</artifactId>
+            <groupId>com.opensource.msgui.manager</groupId>
+            <artifactId>msgui-manager-pay-api</artifactId>
             <version>${project.version}</version>
             <scope>compile</scope>
         </dependency>
@@ -41,46 +35,43 @@
         </dependency>
 
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-oauth2</artifactId>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
-            <groupId>com.opensource.msgui.manager</groupId>
-            <artifactId>msgui-manager-redis-api</artifactId>
-            <version>${project.version}</version>
+            <groupId>com.opensource.msgui.commons</groupId>
+            <artifactId>msgui-commons-utils</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
 
         <dependency>
-            <groupId>com.opensource.msgui.manager</groupId>
-            <artifactId>msgui-manager-pay-api</artifactId>
-            <version>${project.version}</version>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>5.2.6.RELEASE</version>
             <scope>compile</scope>
         </dependency>
 
         <dependency>
-            <groupId>org.redisson</groupId>
-            <artifactId>redisson</artifactId>
-            <version>3.16.0</version>
+            <groupId>jakarta.validation</groupId>
+            <artifactId>jakarta.validation-api</artifactId>
         </dependency>
-
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.cloud</groupId>-->
-<!--            <artifactId>spring-cloud-sleuth-zipkin</artifactId>-->
-<!--        </dependency>-->
     </dependencies>
-
+	
     <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.opensource.msgui.ctl.user.controller.CtlUserApplication</mainClass>
+                    <mainClass>com.opensource.msgui.manager.pay.ManagePayApplication</mainClass>
                 </configuration>
             </plugin>
         </plugins>
     </build>
+
+
 
 </project>
