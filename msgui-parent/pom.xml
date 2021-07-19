@@ -23,8 +23,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <eda.version>1.0.0.RELEASE</eda.version>
-        <eda.development.version>1.0.1-SNAPSHOT</eda.development.version>
+        <msgui.version>1.0.0.RELEASE</msgui.version>
+        <msgui.development.version>1.0.1-SNAPSHOT</msgui.development.version>
     </properties>
 
     <licenses>
@@ -257,9 +257,9 @@
                             <password>12345678</password>
                             <tagBase>${project.artifactId}-${project.version}</tagBase>
                             <goals>-f pom.xml deploy</goals>
-                            <releaseLabel>${eda.version}</releaseLabel>
-                            <releaseVersion>${eda.version}</releaseVersion>
-                            <developmentVersion>${eda.development.version}</developmentVersion>
+                            <releaseLabel>${msgui.version}</releaseLabel>
+                            <releaseVersion>${msgui.version}</releaseVersion>
+                            <developmentVersion>${msgui.development.version}</developmentVersion>
                         </configuration>
                         <dependencies>
                             <dependency>

@@ -41,6 +41,13 @@
         </dependency>
 
         <dependency>
+            <groupId>com.opensource.msgui.manager</groupId>
+            <artifactId>msgui-manager-apm</artifactId>
+            <version>${project.version}</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-oauth2</artifactId>
         </dependency>
