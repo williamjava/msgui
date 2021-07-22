@@ -4,5 +4,5 @@ import com.opensource.msgui.busi.base.service.api.BusiBaseService;
 import com.opensource.msgui.domain.order.Order;
 
 public interface OrderService extends BusiBaseService<Order> {
-
+    void create(Order order);
 }

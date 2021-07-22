@@ -5,4 +5,6 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
        http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
    <dubbo:reference id="repoOrderService" interface="com.opensource.msgui.repo.order.api.RepoOrderService" check="false" version="1.0.0"/>
+
+   <dubbo:reference id="stockService"   interface="com.opensource.msgui.busi.stock.service.api.StockService"  check="false" version="1.0.0" />
 </beans>

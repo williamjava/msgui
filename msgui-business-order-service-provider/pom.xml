@@ -27,6 +27,13 @@
         </dependency>
 
         <dependency>
+            <groupId>com.opensource.msgui.busi</groupId>
+            <artifactId>msgui-business-stock-service-api</artifactId>
+            <version>${project.version}</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
             <groupId>com.opensource.msgui.repo</groupId>
             <artifactId>msgui-repo-order-api</artifactId>
             <version>${project.version}</version>
@@ -71,6 +78,11 @@
             <artifactId>msgui-manager-dubbo</artifactId>
             <version>${project.version}</version>
             <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-seata</artifactId>
         </dependency>
     </dependencies>
 

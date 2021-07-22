@@ -4,5 +4,5 @@ import com.opensource.msgui.busi.base.service.api.BusiBaseService;
 import com.opensource.msgui.domain.stock.Stock;
 
 public interface StockService extends BusiBaseService<Stock> {
-
+    void deduct(Long id, Integer num);
 }
