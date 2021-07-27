@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ImportResource;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @EnableSwagger2
@@ -17,6 +18,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @ImportResource(locations = {"classpath:config/*.xml"})
 public class CtlUserApplication {
     public static void main(String[] args) {
+        FileSystemXmlApplicationContext applicationContext = new FileSystemXmlApplicationContext();
+
         SpringApplication.run(CtlUserApplication.class,args);
     }
 

@@ -20,6 +20,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
+import org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationDetails;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -27,6 +28,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import java.util.Enumeration;
 import java.util.Map;
 import java.util.Objects;
 
@@ -118,6 +121,33 @@ public class LoginController {
         OAuth2AccessToken oAuth2AccessToken = this.tokenStore.readAccessToken(token);
         this.tokenStore.removeAccessToken(oAuth2AccessToken);
         return ResponseResult.success("用户已注销!");
+    }
+
+    /**
+     * 获取请求token
+     * @param request
+     * @return
+     */
+    private String extractHeaderToken(HttpServletRequest request) {
+        Enumeration headers = request.getHeaders("Authorization");
+
+        String value;
+        do {
+            if (!headers.hasMoreElements()) {
+                return null;
+            }
+
+            value = (String)headers.nextElement();
+        } while(!value.toLowerCase().startsWith("Bearer".toLowerCase()));
+
+        String authHeaderValue = value.substring("Bearer".length()).trim();
+        request.setAttribute(OAuth2AuthenticationDetails.ACCESS_TOKEN_TYPE, value.substring(0, "Bearer".length()).trim());
+        int commaIndex = authHeaderValue.indexOf(44);
+        if (commaIndex > 0) {
+            authHeaderValue = authHeaderValue.substring(0, commaIndex);
+        }
+
+        return authHeaderValue;
     }
 
     static class LoginParam {

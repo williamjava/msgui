@@ -20,6 +20,9 @@ import org.springframework.security.oauth2.provider.token.store.redis.RedisToken
 
 import javax.sql.DataSource;
 
+/**
+ * 配置授权服务的参数
+ */
 @Configuration
 @EnableAuthorizationServer
 public class AuthorizationServerConfiguration extends AuthorizationServerConfigurerAdapter {
