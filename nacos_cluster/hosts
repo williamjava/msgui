@@ -1,0 +1,11 @@
+﻿# SwitchHosts!
+
+# Added by Docker Desktop
+10.0.30.49 host.docker.internal
+10.0.30.49 gateway.docker.internal
+# To allow the same kube context to work on the host and the container:
+127.0.0.1 kubernetes.docker.internal
+# End of section
+
+121.40.19.21 test-eda.ccc-l.com
+127.0.0.1 www.msgui-nacos.com
